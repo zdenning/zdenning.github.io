@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+
+	<title>Zac Denning</title>
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/> 
+		<link rel="stylesheet" href="personalsite.css"/>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script>
+			var app = angular.module('app', ['ngRoute']);
+			app.config(function($routeProvider) {
+			
+			$routeProvider
+
+				.when('/', {
+					//home page
+					templateUrl: 'pages/homePage.html',
+					controller: 'homeController'
+				})
+				.when('/education', {
+					//education page
+					templateUrl: 'pages/educationPage.html',
+					controller: 'educationController'
+				})
+				.when('/about', {
+					//about page
+					templateUrl: 'pages/bio.html',
+					controller: 'aboutController'
+				})
+				.when('/projects', {
+					//about page
+					templateUrl: 'pages/projects.html',
+					controller: 'aboutController'
+				})
+				.when('/contact', {
+					//about page
+					templateUrl: 'pages/contact.html',
+					controller: 'contactController'
+				})
+				.otherwise({
+					//when all else fails
+					templateUrl: 'pages/homePage.html',
+					controller: 'notFoundController'
+				});
+			});
+
+			app.controller('homeController', function($scope) {
+				
+			});
+
+			app.controller('projectsController', function($scope) {
+				
+			});
+			
+			app.controller('educationController', function($scope) {
+				
+			});
+
+			app.controller('aboutController', function($scope) {
+				
+			});
+
+			app.controller('contactController', function($scope) {
+
+			});
+
+			app.controller('notFoundController', function($scope) {
+
+			});
+			
+
+
+		</script>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#/">Portfolio <i class="fa fa-home"></i></a>
+				
+				</div>
+				
+				<ul class="nav navbar-nav navbar-right">
+				  <li><a href="#projects">Projects</a></li>
+				  <li><a href="#education">Education</a></li>
+		          <li><a href="#about">About</a></li>
+		          <li><a href="#contact">Contact Zac</a></li>				   				       
+		    	</ul>
+		    	
+	    	</div>
+	    </nav>
+	</header>
+		<div id="main">
+			<div ng-view></div>
+			<br>
+		</div>
+	</body>
+</html>
